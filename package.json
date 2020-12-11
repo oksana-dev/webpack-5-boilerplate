@@ -1,0 +1,18 @@
+{
+  "name": "webpack-5-boilerplate",
+  "version": "1.0.0",
+  "description": "webpack 5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "webpack",
+    "react",
+    "scss"
+  ],
+  "author": "oksana.dev <ok.oksana.dev@gmail.com>",
+  "license": "ISC"
+}
