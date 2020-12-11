@@ -2,7 +2,7 @@
   "name": "webpack-5-boilerplate",
   "version": "1.0.0",
   "description": "webpack 5",
-  "main": "index.js",
+  "private": "true",
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production"
