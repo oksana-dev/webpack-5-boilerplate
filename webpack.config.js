@@ -3,8 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const devMode = process.env.NODE_ENV === 'development'
+
 module.exports = {
-  mode: 'development',
+  mode: process.env.NODE_ENV,
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -18,7 +20,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: 'index.html',
+      minify: {
+        collapseWhitespace: !devMode
+      }
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
