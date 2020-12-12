@@ -17,7 +17,9 @@ module.exports = {
     open: true
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
@@ -34,6 +36,10 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader']
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
         use: ['file-loader']
       }
     ],
