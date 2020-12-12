@@ -23,7 +23,10 @@ Builds the app for production to the `dist` folder.<br />
 It correctly bundles JavaScript, SCSS, images in production mode and optimizes the build for the best performance.
 The build is minified and the filenames include the hashes.<br />
 
-# Contributing
+## Contributing
 
 Love this webpack-5 boilerplate and want to help? Thanks so much, there's something to do for everybody!
 
+## LICENSE
+
+This project is open source and available under the [https://github.com/coatceatl/test/blob/main/LICENSE](MIT License)
