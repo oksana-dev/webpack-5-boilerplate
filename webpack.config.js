@@ -9,6 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].[hash].js',
+    publicPath: '/',
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
@@ -31,6 +32,10 @@ module.exports = {
           'css-loader',
         ],
       },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader']
+      }
     ],
   },
 }
