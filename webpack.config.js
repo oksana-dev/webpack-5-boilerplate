@@ -42,11 +42,16 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 4 * 1024 // 4kb
+          }
+        }
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        use: ['file-loader']
+        type: 'asset/resource',
       },
       {
         test: /\.m?js$/,
