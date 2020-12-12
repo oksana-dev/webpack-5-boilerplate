@@ -4,7 +4,6 @@
   "description": "webpack 5",
   "private": "true",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack --mode development --watch",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "start": "cross-env NODE_ENV=development webpack serve"
   },
@@ -16,15 +15,18 @@
     "scss"
   ],
   "author": "oksana.dev <ok.oksana.dev@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/eslint-parser": "^7.12.1",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.12.10",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^5.0.1",
+    "eslint": "^7.15.0",
+    "eslint-webpack-plugin": "^2.4.1",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.3.3",
     "node-sass": "^5.0.0",

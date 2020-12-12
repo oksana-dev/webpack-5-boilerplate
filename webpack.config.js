@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 const devMode = process.env.NODE_ENV === 'development'
 
@@ -16,6 +17,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     port: 3300,
+    hot: true,
     open: true
   },
   devtool: devMode ? 'eval-source-map' : false,
@@ -29,6 +31,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
+    }),
+    new ESLintPlugin({
+      context: 'src'
     })
   ],
   module: {
@@ -58,11 +63,7 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-class-properties']
-          }
+          loader: 'babel-loader'
         }
       }
     ],
