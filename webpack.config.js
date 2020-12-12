@@ -18,6 +18,7 @@ module.exports = {
     port: 3300,
     open: true
   },
+  devtool: devMode ? 'eval-source-map' : false,
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html',
