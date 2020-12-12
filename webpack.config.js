@@ -8,7 +8,7 @@ const devMode = process.env.NODE_ENV === 'development'
 
 module.exports = {
   mode: process.env.NODE_ENV,
-  entry: ['@babel/polyfill', './src/index.js'],
+  entry: ['@babel/polyfill', './src/index.jsx'],
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].[hash].js',
@@ -60,12 +60,13 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\.m?js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: ['babel-loader']
       }
     ],
   },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
+  }
 }
